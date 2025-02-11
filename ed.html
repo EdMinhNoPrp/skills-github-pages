@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh Academy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: #005fa3;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .test-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .test-card {
+      background: #eef;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .test-card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .test-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+    input, textarea, select, button {
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #0077cc;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    .success-message {
+      color: green;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const successMessage = document.getElementById('success-message');
+      successMessage.textContent = 'Your information has been submitted successfully!';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Minh Academy</h1>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#login">Login</a>
+    <a href="#signup">Sign Up</a>
+    <a href="#tests">Practice Tests</a>
+  </nav>
+
+  <main class="container">
+    <section id="login">
+      <h2>Login to Your Account</h2>
+      <form onsubmit="handleFormSubmit(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="signup">
+      <h2>Create a New Account</h2>
+      <form onsubmit="handleFormSubmit(event)">
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" name="new-username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="new-password">Password:</label>
+        <input type="password" id="new-password" name="new-password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+
+    <section id="tests">
+      <h2>Practice Tests</h2>
+      <div class="test-section">
+        <div class="test-card">
+          <h3>Listening Test</h3>
+          <p>Practice your listening skills with realistic audio tests.</p>
+          <button>Start Test</button>
+        </div>
+        <div class="test-card">
+          <h3>Reading Test</h3>
+          <p>Improve your reading comprehension with timed tests.</p>
+          <button>Start Test</button>
+        </div>
+        <div class="test-card">
+          <h3>Writing Test</h3>
+          <p>Submit essays and get instant feedback.</p>
+          <button>Start Test</button>
+        </div>
+        <div class="test-card">
+          <h3>Speaking Test</h3>
+          <p>Practice speaking with simulated conversations.</p>
+          <button>Start Test</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>If you encounter any issues, please contact us via Gmail: <a href="mailto:dinhminhduc2k7@gmail.com">dinhminhduc2k7@gmail.com</a></p>
+    </section>
+
+    <p id="success-message" class="success-message"></p>
+  </main>
+
+  <footer>
+    <p>Minh Academy &copy; 2025</p>
+  </footer>
+</body>
+</html>
